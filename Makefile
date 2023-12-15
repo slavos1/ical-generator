@@ -22,5 +22,6 @@ clean:
 rebuild: clean ical
 
 netlify:
-	pip install -r reqs-netlify.txt
+	pip install -U pip
+	pip install --index-url=https://pypi.org/project/simple -r reqs.txt
 	${MAKE}	rebuild

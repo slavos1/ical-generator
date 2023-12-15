@@ -1,4 +1,0 @@
-loguru==0.7.2
-pandas==2.0.3
-ical==6.1.1
-ruamel.yaml==0.18.5 
