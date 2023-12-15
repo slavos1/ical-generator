@@ -1,11 +1,11 @@
-VENV ?= .venv
+VENV ?= .venv/bin/
 MODULE=ical_generator
 ICAL=dist/qld_school_term_2024.ical
 
 all: ical
 
 dist/%.ical: %.yaml
-	${VENV}/bin/python -m ${MODULE} -o $@ $<
+	${VENV}python -m ${MODULE} -o $@ $<
 
 ical: ${ICAL} 
 
@@ -22,7 +22,5 @@ clean:
 rebuild: clean ical
 
 netlify:
-	python3 -m venv ${VENV}
-	${VENV}/bin/python -m pip install -U pip
-	${VENV}/bin/python -m pip install -r reqs.txt
+	pip install -r reqs.txt
 	${MAKE}	rebuild
